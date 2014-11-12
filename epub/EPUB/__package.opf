@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<package version="3.0" 
+  xmlns="http://www.idpf.org/2007/opf" unique-identifier="pub-identifier">
+  <metadata 
+    xmlns:dc="http://purl.org/dc/elements/1.1/" 
+    xmlns:opf="http://www.idpf.org/2007/opf">
+    <dc:title>Hello World</dc:title>
+    <dc:language>en</dc:language>
+    <dc:identifier id="pub-identifier">urn:blah:hello-world</dc:identifier>
+    <dc:creator>Yinso Chen</dc:creator>
+    <dc:publisher>contender</dc:publisher>
+    <dc:date>2014-11-12T14:18:36Z</dc:date>
+    <meta property="dcterms:modified">2014-11-12T14:18:36Z</meta>
+  </metadata>
+  <manifest>
+    <item id="toc" href="__toc.xhtml" media-type="application/xhtml+xml" properties="nav"/>
+    <item id="intro" href="intro.xhtml" media-type="application/xhtml+xml"/>
+  </manifest>
+  <spine>
+    <itemref idref="intro"/>
+  </spine>
+  <guide>
+    <reference href="intro.xhtml" type="cover" title="Cover"/>
+  </guide>
+</package>

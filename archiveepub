@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+
+var archiver = require('archiver');
+var fs = require('fs');
+
+var epubFile = process.argv.length > 2 ? process.argv[2] : 'witharchiver.epub';
+var zipArchive = archiver('zip');
+var outputStream = fs.createWriteStream(epubFile);
+
+zipArchive.on('finish', function(err) {
+  if (err) {
+    console.error(err);
+    console.error(err.stack);
+  } else {
+    console.log(epubFile, 'created.');
+  }
+});
+
+zipArchive.pipe(outputStream);
+
+zipArchive.bulk([
+  {
+    cwd: 'epub',
+    src: 'mimetype',
+    expand: true
+  }, 
+  {
+    cwd: 'epub',
+    src: 'META-INF/**',
+    expand: true
+  },
+  {
+    cwd: 'epub',
+    src: 'EPUB/**',
+    expand: true
+  }
+]);
+
+zipArchive.finalize();

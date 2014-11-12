@@ -1,0 +1,16 @@
+{
+  "name": "archiver-epub-test",
+  "author": "Yinso Chen",
+  "description": "Testing of archiver zipping epub.",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yinso/archive-epub-test.git"
+  },
+  "engines": {
+    "node": ">= 0.8.4"
+  },
+  "dependencies": {
+    "archiver": "=0.12.0"
+  }
+}

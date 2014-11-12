@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+ZIP_FILE=${1:-'withzip.epub'}
+ZIP_PATH="../$ZIP_FILE"
+
+cd epub
+zip -X $ZIP_PATH mimetype
+zip -rg $ZIP_PATH META-INF -x \*.DS_Store
+zip -rg $ZIP_PATH EPUB -x \*.DS_Store
+cd -
+echo epub $ZIP_FILE created
