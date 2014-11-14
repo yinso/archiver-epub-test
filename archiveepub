@@ -23,7 +23,7 @@ zipArchive.bulk([
     cwd: 'epub',
     src: 'mimetype',
     expand: true,
-    store: true
+    data: { store: true }
   }, 
   {
     cwd: 'epub',
